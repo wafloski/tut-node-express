@@ -8,6 +8,9 @@ exports.store = (req, res) => {
     }).then(function () {
         req.flash('form', req.body.firstName + ', you are a hero');
         res.redirect('/');
+    }).catch(function () {
+        req.flash('form', 'oooops! something went wrong!');
+        res.redirect('/');
     });
 };
 
